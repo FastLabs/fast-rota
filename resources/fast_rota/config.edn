@@ -1,0 +1,16 @@
+{:duct.core/project-ns  fast-rota
+ :duct.core/environment :production
+
+ :duct.module/logging   {}
+ :duct.module.web/site  {}
+ :duct.module/sql       {}
+
+ :fast-rota/ragtime ["migrations"]
+ :duct.migrator/ragtime {:migrations #ig/ref :fast-rota/ragtime}
+  ;[:duct.migrator.ragtime/sql :foo.migration/create-foo-table] {:up ["CREATE TABLE foo (id int);"] :down ["DROP TABLE foo;"]}
+
+  :duct.router/cascading
+   [#ig/ref :fast-rota.handler/example]
+
+  :fast-rota.handler/example
+  {:db #ig/ref :duct.database/sql}}
