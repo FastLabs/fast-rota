@@ -5,11 +5,11 @@
  :duct.module.web/site  {}
  :duct.module/sql       {}
 
- :fast-rota/ragtime ["migrations"]
- :duct.migrator/ragtime {:migrations #ig/ref :fast-rota/ragtime}
+ :fast-rota/ragtime     ["migrations"]
+ :duct.migrator/ragtime {:migrations ^:replace #ig/ref :fast-rota/ragtime}
 
-  :duct.router/cascading
-   [#ig/ref :fast-rota.handler/example]
+ :duct.router/cascading
+                        [#ig/ref :fast-rota.handler/example]
 
-  :fast-rota.handler/example
-  {:db #ig/ref :duct.database/sql}}
+ :fast-rota.handler/example
+                        {:db #ig/ref :duct.database/sql}}

@@ -24,4 +24,8 @@
 (when (io/resource "local.clj")
   (load "local"))
 
+
+(defn db []
+  (:spec (val (ig/find-derived-1 system :duct.database/sql))))
+
 (integrant.repl/set-prep! (comp duct/prep read-config))

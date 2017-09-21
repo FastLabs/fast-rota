@@ -7,7 +7,8 @@
                  [duct/module.logging "0.3.1"]
                  [duct/module.web "0.6.2"]
                  [duct/module.sql "0.3.2"]
-                 [org.xerial/sqlite-jdbc "3.20.0"]]
+                 [org.xerial/sqlite-jdbc "3.20.0"]
+                 [org.clojure/java.jdbc "0.7.1"]]
   :plugins [[duct/lein-duct "0.10.2"]]
   :main ^:skip-aot fast-rota.main
   :source-paths ["src/clj"]
